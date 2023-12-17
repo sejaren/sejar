@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body class="login-page">
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+      <div>
+        <label for="username"><i class="fas fa-user"></i> Enter Your Name:</label>
+        <input type="text" id="username" name="username" placeholder="Your name is the key">
+      </div>
+      <div>
+        <input type="submit" value="Login">
+      </div>
+    </form>
+    <p class="love">Waiting for Her ❤</p>
+  </div>
+
+  <div class="welcome-section" style="display: none;">
+    <i class="fas fa-check-circle welcome-icon"></i>
+    <h1 class="welcome-message">Welcome, Eniya!</h1>
+    <!-- Additional welcome content -->
+  </div>
+
+  <script>
+    function validateForm() {
+      var username = document.getElementById('username').value;
+
+      if (username.toLowerCase() !== 'eniya') {
+        window.location.href = 'redirect.html?status=failure'; // Redirect to failure page
+        return false;
+      } else {
+        window.location.href = 'second-page.html'; // Redirect to second page
+        return false;
+      }
+    }
+  </script>
+
+</body>
+</html>

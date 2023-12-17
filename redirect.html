@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect Page</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+</head>
+<body class="redirect-page">
+
+  <div class="redirect-container">
+    <div class="content">
+      <h2>Illuminate this space with her presence, only her light brings this place to life ✨</h2>
+      <div id="authMessage"></div>
+      <p></p>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      var authMessage = document.getElementById('authMessage');
+      var params = new URLSearchParams(window.location.search);
+      var status = params.get('status');
+
+      if (status === 'success') {
+        authMessage.innerHTML = "<p>You have successfully logged in as Eniya!</p>";
+      } else if (status === 'failure') {
+        authMessage.innerHTML = "<p1>You are not authorized to login.</p1>";
+      } else {
+        authMessage.innerHTML = "<p>Invalid request.</p>";
+      }
+    };
+  </script>
+
+</body>
+</html>

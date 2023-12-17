@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Page</title>
+  <style>
+    /* Resetting defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #000000;
+      color: #fff;
+      padding: 0px 0;
+      text-align: center;
+    }
+
+    /* Container for h1 and p inside the header */
+    .header-content {
+      background-image: url(https://wallpapercave.com/wp/wp2370538.jpg);
+      text-align: center;
+      background-size: cover;
+      background-position: bottom;
+      padding-top: 50px; /* Adjust top padding */
+      padding-bottom: 20px; /* Adjust bottom padding */
+    }
+
+    .header-content h1 {
+	font-family: 'Work Sans', sans-serif;
+      font-weight: 1000;
+      font-size: 45x; /* Adjusted font size */
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image: 
+        url("https://cdn.wallpapersafari.com/59/48/DX5JiH.png");
+      background-size: 10% auto;
+      background-position: center;
+      font-size: 36px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .header-content p {
+      font-size: 18px;
+    }
+
+    /* Navigation styles */
+    nav {
+      background-color: #333333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allows items to wrap */
+    }
+
+    nav ul li {
+      margin-right: 20px;
+      margin-bottom: 10px; /* Adds space between rows */
+    }
+
+    nav ul li:last-child {
+      margin-right: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 8px 15px; /* Adjust padding */
+      border-radius: 5px; /* Add rounded corners */
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a img {
+      height: 30px; /* Adjust height */
+      width: auto; /* Maintain aspect ratio */
+      margin-right: 5px; /* Add space between icon and text */
+    }
+
+    nav ul li a:hover {
+      background-color: #4AABE1; /* Change background on hover */
+      color: #fff;
+    }
+
+    /* Main content styles */
+    .container {
+      overflow: auto;
+      padding: 0px;
+    }
+
+    .main-content {
+      background: #fff;
+      background-image: url(https://wallpapercave.com/wp/wp2370538.jpg);
+      background-repeat: no-repeat;
+      background-position: cover;
+      background-size: cover;
+      padding: 140px;
+    }
+
+    /* Applying the updated style to h2 */
+    .main-content h2 {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 1000;
+      font-size: 45x; /* Adjusted font size */
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-image: 
+        url("https://images.wallpapersden.com/image/download/glowing-triangle-pattern_bGdqa22UmZqaraWkpJRsa21lrWloZ2U.jpg");
+      background-size: 10% auto;
+      background-position: center;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #000000;
+      color: #fff;
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      .header-content h1 {
+        font-size: 28px;
+      }
+
+      .header-content p {
+        font-size: 16px;
+      }
+
+      nav ul li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      nav ul li a {
+        padding: 5px 10px;
+      }
+
+      nav ul li a img {
+        height: 25px;
+        margin-right: 3px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .main-content h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content"> <!-- Container for h1 and p -->
+      <h1>Welcome to Advanced Page</h1>
+      <p></p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="https://cdn0.iconfinder.com/data/icons/seo-and-marketing-volume-1/256/61-512.png" alt="Home"><span>Home</span></a></li>
+      
+      <li><a href="diary.html"><img src='https://cdn4.iconfinder.com/data/icons/universal-web-vol-2/256/55-512.png' alt='Diary'><span>Diary</span></a></li>
+      <li><a href="gallery.html"><img src="https://globalwellnessinstitute.org/wp-content/uploads/2021/04/instagram-logo.png" alt="Instagram"><span>Memories</span></a></li>
+      <li><a href="Contact.html"><img src='https://cdn-icons-png.flaticon.com/512/446/446433.png' alt="Contact"><span>Contact</span></a></li>
+	  <li><a href="about.html"><img src='https://cdn-icons-png.flaticon.com/512/4240/4240163.png' alt='About'><span>About</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="main-content">
+      <h2>You Really Made Every Girl Unattractive</h2>
+    </section>
+  </div>
+  
+  
+
+  <footer>
+    <p>&copy; 2023 Advanced Page. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
