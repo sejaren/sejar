@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memories Gallery</title>
+  <title>Interactive Photo Gallery</title>
   <style>
     /* Resetting defaults */
     * {
@@ -23,44 +23,82 @@
 
     /* Header styles */
     header {
-      background-color: #000000;
+      background-color: #222;
       color: #fff;
       padding: 20px 0;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     /* Gallery styles */
-    .gallery {
+    .gallery-container {
+      padding: 4px;
+    }
+
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	  
       gap: 30px;
       padding: 20px;
     }
 
-    .gallery-item {
-      border-radius: 50px;
-      overflow: hidden;
-	  background-position: cover;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .gallery-item img {
-      width: 100%;
+    .gallery-img {
+      
+      cursor: pointer;
+      border-radius: 50%; /* Makes the images circular */
+      overflow: hidden; /* Hides the parts outside the circle */
+      
+     
+	  width: 100%;
       height: 100%;
       display: block;
 	  background-position: cover;
       transition: transform 0.3s ease;
     }
-	
-    .gallery-item img:hover {
+
+    .gallery-img:hover {
       transform: scale(1.05);
     }
 
-    /* Media Queries */
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      text-align: center;
+    }
+
+    .lightbox-content {
+      margin-top: 5%;
+      display: inline-block;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .close {
+      color: #fff;
+      font-size: 40px;
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      cursor: pointer;
+    }
+
+    #caption {
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    /* Making the gallery images responsive */
     @media screen and (max-width: 768px) {
-      .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      .gallery-img {
+        width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -69,21 +107,53 @@
 
   <header>
     <h1>Memories Gallery</h1>
+    <p></p>
   </header>
 
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/Sejarten/Images/main/115ee2fc-064e-42c0-b7fa-e00a03a08f9d.jpeg" alt="Image 1">
+  <div class="gallery-container">
+    <div class="gallery-grid">
+      <!-- Thumbnails -->
+      <img src="https://raw.githubusercontent.com/Sejarten/Images/main/115ee2fc-064e-42c0-b7fa-e00a03a08f9d.jpeg" alt="First Picture" class="gallery-img" onclick="openLightbox(); setCurrentImage(1)">
+	  <img src="https://raw.githubusercontent.com/Naveen220104/image-gallery/main/Whatsapp_profile%202023-11-15%20092107.png" alt="First Whatsapp Profile" class="gallery-img" onclick="openLightbox(); setCurrentImage(2)">
+	  <img src="https://raw.githubusercontent.com/Naveen220104/image-gallery/main/Whatsapp_Profile%202023-11-17%20211447.png" alt="Second Whatsapp Profile" class="gallery-img" onclick="openLightbox(); setCurrentImage(3)">
+	  <img src="https://raw.githubusercontent.com/Naveen220104/image-gallery/main/Whatsapp_Profile%202023-11-17%20211447.png" alt="Second Whatsapp Profile" class="gallery-img" onclick="openLightbox(); setCurrentImage(4)">
+	  
+	  
+	  
+      <!-- Add more thumbnails here -->
     </div>
-    <!-- Add more gallery items similarly -->
-    <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/Naveen220104/image-gallery/main/Whatsapp_profile%202023-11-15%20092107.png" alt="Image 2">
-    </div>
-    <div class="gallery-item">
-      <img src="https://raw.githubusercontent.com/Naveen220104/image-gallery/main/Whatsapp_Profile%202023-11-17%20211447.png " alt="Image 3">
-    </div>
-    <!-- Add more images as needed -->
   </div>
+
+  <!-- The Modal/Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    // Open the Modal
+    function openLightbox() {
+      document.getElementById('lightbox').style.display = "block";
+    }
+    
+    // Close the Modal
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = "none";
+    }
+    
+    // Declare a variable for the index of the current image
+    let currentIndex = 1;
+    
+    // Change the image in the lightbox to the one that is clicked on
+    function setCurrentImage(index) {
+      currentIndex = index;
+      const imageSrc = document.getElementsByClassName('gallery-img')[currentIndex - 1].src;
+      document.getElementById('lightbox-img').src = imageSrc;
+      const imageAlt = document.getElementsByClassName('gallery-img')[currentIndex - 1].alt;
+      document.getElementById('caption').innerHTML = imageAlt;
+    }
+  </script>
 
 </body>
 </html>
