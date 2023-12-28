@@ -269,7 +269,7 @@ li.previous_link a:before, li.next_link a:before,
 li.first_link a:before, li.last_link a:before {
   content: "";
   border: 2px solid #fff;
-  width: 120px;
+  width: 12px; /* for bottom icons */
   height: 12px;
   display: block;
   position: absolute;
